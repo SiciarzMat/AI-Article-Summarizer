@@ -10,15 +10,16 @@ export const articleApi = createApi({
       headers.set("X-RapidAPI-Key", rapidApiKey);
       headers.set(
         "X-RapidAPI-Host",
-        "https://article-extractor-and-summarizer.p.rapidapi.com"
+        "article-extractor-and-summarizer.p.rapidapi.com"
       );
+
       return headers;
     },
   }),
   endpoints: (builder) => ({
     getSummary: builder.query({
       query: (params) =>
-        `/summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
+        `summarize?url=${encodeURIComponent(params.articleUrl)}&length=3`,
     }),
   }),
 });
